@@ -8,6 +8,7 @@ initialize_songs(current_index);
 const prev = document.querySelector('#prev');
 const next = document.querySelector('#next');
 
+
 next.addEventListener('click', function() {
     controls.next(current_index);
     current_index += 1;
