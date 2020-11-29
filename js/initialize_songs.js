@@ -9,24 +9,27 @@ function initialize_songs(songs, current_index) {
     for (i = 0; i < current_index; i+=1) {
         const song = document.createElement('div');
         song.classList = 'before cover';
+        song.id = `${i}`;
         song.style.backgroundImage = `url('${songs[i].cover}')`;
-        song.style.zIndex = i+1;
         covers.appendChild(song);
     }
 
     if (i === current_index) {
         const song = document.createElement('div');
         song.classList = 'current cover';
+        song.id = `${i}`;
         song.style.backgroundImage = `url('${songs[i].cover}')`;
-        song.style.zIndex = songs.length + 1;
         covers.appendChild(song);
+
+        const audio = document.getElementById('current-song');
+        audio.src = songs[current_index].src;
     }
 
     for (i = songs.length - 1; i > current_index; i-=1) {
         const song = document.createElement('div');
         song.classList = 'after cover';
+        song.id = `${i}`;
         song.style.backgroundImage = `url('${songs[i].cover}')`;
-        song.style.zIndex = songs.length - i;
         covers.appendChild(song);
     }
 }
