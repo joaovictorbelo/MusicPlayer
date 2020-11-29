@@ -1,6 +1,7 @@
 import reset_song from "./reset_song.js";
+import songs from "./songs.js";
 
-function initialize_songs(songs, current_index) {
+function initialize_songs(current_index) {
 
     const covers = document.querySelector('.covers');
 
