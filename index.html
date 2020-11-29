@@ -8,16 +8,26 @@
 </head>
 <body>
     <div class="player">
+        <audio id="current-song" src="./" type="audio/mpeg"></audio>
         <div class="covers">
-            <div class="before cover"></div>
-            <div class="current cover"></div>
-            <div class="after cover"></div>
         </div>
         <div class="controler">
-            <div class="progress-bar"></div>
-            <div class="info"></div>
-            <div class="controls"></div>
+            <div class="progress-bar">
+                <progress value="0" max="1"></progress>
+            </div>
+            <div class="info">
+                <h2 id="title">Teste</h2>
+                <h3 id="author">Teste</h3>
+            </div>
+            <div class="controls">
+                <button id="prev">prev</button>
+                <button id="r10">r-10</button>
+                <button id="play">play/pause</button>
+                <button id="f10">f-10</button>
+                <button id="next">next</button>
+            </div>
         </div>
     </div>
+    <script type="module" src="./js/index.js"></script>
 </body>
 </html>

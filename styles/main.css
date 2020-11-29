@@ -31,11 +31,11 @@ body {
 .cover {
     border-radius: 15px;
     bottom: 0;
+    background-size: cover;
 }
 
 .current {
     height: 100%;
-    background-color: aqua;
     z-index: 3;
     grid-column: 2 / span 2;
     grid-row: 1 / span 2;
@@ -43,7 +43,6 @@ body {
 
 .before, .after {
     z-index: 2;
-    background-color: blueviolet;
     grid-row: 2;
 }
 
@@ -61,6 +60,15 @@ body {
     grid-row: 2 / span 2;
     grid-column: 1 / span 3;
     background: linear-gradient(0deg, rgb(49, 23, 88) 0%, rgba(55,30,92,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.info {
+    text-align: center;
+    color: white;
 }
 
 @media only screen and (max-width: 700px) {
@@ -77,6 +85,7 @@ body {
     .covers {
         width: 140%;
         margin-left: -20%;
+        min-width: 0;
     }
     
     .controler {
