@@ -2,8 +2,8 @@ class Song {
     constructor(name, author, albumName, fileName) {
         this.name = name;
         this.author = author;
-        this.src = `../assets/songs/${fileName}.mp3`;
-        this.cover = `../assets/images/${albumName}.jpg`;
+        this.src = `./assets/songs/${fileName}.mp3`;
+        this.cover = `./assets/images/${albumName}.jpg`;
     }
 }
 
