@@ -1,5 +1,6 @@
 import initialize_songs from "./initialize_songs.js";
 import controls from "./controls.js";
+import progress_bar from "./progress_bar.js";
 
 let current_index = 0;
 
@@ -10,8 +11,6 @@ const next = document.querySelector('#next');
 const play = document.querySelector('#play');
 const f10 = document.querySelector('#f10');
 const r10 = document.querySelector('#r10');
-const time = document.querySelector('#time');
-const duration = document.querySelector('#duration')
 const audio = document.querySelector('#current-song');
 
 
@@ -38,10 +37,5 @@ r10.addEventListener('click', function() {
 });
 
 audio.addEventListener('timeupdate', function() {
-    time.innerHTML = audio.currentTime;
+    progress_bar.update(audio);
 })
-
-audio.onloadedmetadata = function() {
-    this.play();
-    duration.innerHTML = audio.duration;
-}
