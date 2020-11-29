@@ -10,7 +10,7 @@ class Song {
 const songs = [];
 
 songs.push(new Song('Sprouts of Time', 'Angra', 'TempleOfShadows', 'SproutsOfTime'));
-songs.push(new Song('Live and Let Die', 'Guns and Roses', 'UseYourIllusion'));
-songs.push(new Song('Resistence', 'Muse', 'Resistence'));
+songs.push(new Song('Live and Let Die', 'Guns and Roses', 'UseYourIllusion', 'LiveAndLetDie'));
+songs.push(new Song('Resistance', 'Muse', 'Resistence', 'TheResistance'));
 
 export default songs;

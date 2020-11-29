@@ -8,8 +8,7 @@ const handler = {
             const next_song = document.getElementById(`${current_index + 1}`);
             current_song.classList = 'before cover';
             next_song.classList = 'current cover';
-            current_index += 1;
-            reset_song(songs[current_index]);
+            reset_song(songs[current_index + 1]);
         } 
     },
 
@@ -19,10 +18,28 @@ const handler = {
             const prev_song = document.getElementById(`${current_index - 1}`);
             current_song.classList = 'after cover';
             prev_song.classList = 'current cover';
-            current_index -= 1;
-            reset_song(songs[current_index]);
+            reset_song(songs[current_index - 1]);
         }
-    }
+    },
+
+    play: function() {
+        const audio = document.querySelector('#current-song');
+        if (audio.paused){
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    },
+
+    forward: function() {
+        const audio = document.querySelector('#current-song');
+        audio.currentTime += 10;
+    },
+
+    backward: function() {
+        const audio = document.querySelector('#current-song');
+        audio.currentTime -= 10;
+    } 
 }
 
 export default handler;
