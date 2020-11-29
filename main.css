@@ -2,11 +2,17 @@ body {
     width: 100%;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(0deg, rgba(12,0,32,1) 0%, rgb(28, 13, 54) 100%);
+    background: transparent linear-gradient(0deg, #0C0020 0%, #140927 100%) 0% 0% no-repeat padding-box;
 
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .player {
@@ -26,6 +32,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 15% 85%;
+    overflow: hidden;
 }
 
 .cover {
@@ -60,10 +67,12 @@ body {
     grid-row: 2 / span 2;
     grid-column: 1 / span 3;
     background: linear-gradient(0deg, rgb(49, 23, 88) 0%, rgba(55,30,92,1) 100%);
+    box-shadow: 0px -35px 71px 16px #00000070;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
 }
 
 .info {
@@ -75,6 +84,50 @@ body {
     color: white;
     display: flex;
     justify-content: space-between;
+}
+
+.progress-bar{
+    width: 600px;
+    position: absolute;
+    top: -10px
+}
+
+#bar {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 10px;
+}
+
+#bar[value]::-webkit-progress-bar{
+    background-color: #C6C6C6;
+    border-radius: 8px;
+}
+
+#bar[value]::-webkit-progress-value{
+    background-color: #8E56E1;
+    border-radius: 8px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+.controls button {
+    margin: 0 1vw;
+}
+
+#play img{
+    width: calc(25px + 2vw);
+}
+
+#r10 img, #f10 img {
+    width: calc(15px + 2vw);
+}
+
+#prev img, #next img {
+    width: calc(10px + 1.5vw);
 }
 
 @media only screen and (max-width: 700px) {
@@ -98,4 +151,16 @@ body {
         border-radius: 0;
         margin: 0;
     }   
+    
+    .progress-bar{
+        width: 100%;
+    }
+    
+    #bar[value]::-webkit-progress-bar{
+        border-radius: 0;
+    }
+    
+    #bar[value]::-webkit-progress-value{
+        border-radius: 0;
+    }
 }
