@@ -8,6 +8,8 @@ const handler = {
     update: function(audio) {
         bar.value = audio.currentTime/duration.value;
         time.innerHTML = secToMin(audio.currentTime);
+
+        return duration.value - audio.currentTime;
     }
 }
 
