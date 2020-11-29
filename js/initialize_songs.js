@@ -1,3 +1,5 @@
+import reset_song from "./reset_song.js";
+
 function initialize_songs(songs, current_index) {
 
     const covers = document.querySelector('.covers');
@@ -21,8 +23,7 @@ function initialize_songs(songs, current_index) {
         song.style.backgroundImage = `url('${songs[i].cover}')`;
         covers.appendChild(song);
 
-        const audio = document.getElementById('current-song');
-        audio.src = songs[current_index].src;
+        reset_song(songs[i]);
     }
 
     for (i = songs.length - 1; i > current_index; i-=1) {
