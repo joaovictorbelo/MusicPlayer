@@ -13,7 +13,7 @@ const play = document.querySelector('#play');
 const f10 = document.querySelector('#f10');
 const r10 = document.querySelector('#r10');
 const audio = document.querySelector('#current-song');
-
+const bar = document.getElementById('bar');
 
 next.addEventListener('click', function() {
     if(current_index != songs.length -1){
@@ -34,11 +34,11 @@ play.addEventListener('click', function() {
 });
 
 f10.addEventListener('click', function() {
-    controls.forward();
+    controls.skipTo(audio.currentTime + 10);
 });
 
 r10.addEventListener('click', function() {
-    controls.backward();
+    controls.skipTo(audio.currentTime - 10);
 });
 
 audio.addEventListener('timeupdate', function() {
@@ -46,4 +46,10 @@ audio.addEventListener('timeupdate', function() {
     if(autoskip == 0){
         next.click();
     }
+});
+
+bar.addEventListener('input', function() {
+    audio.pause();
+    controls.skipTo((bar.value*audio.duration)/10);
+    controls.play();
 });

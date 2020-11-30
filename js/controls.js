@@ -34,14 +34,9 @@ const handler = {
         }
     },
 
-    forward: function() {
+    skipTo: function(time) {
         const audio = document.querySelector('#current-song');
-        audio.currentTime += 10;
-    },
-
-    backward: function() {
-        const audio = document.querySelector('#current-song');
-        audio.currentTime -= 10;
+        audio.currentTime = time;
     } 
 }
 
