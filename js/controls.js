@@ -20,10 +20,13 @@ const handler = {
 
     play: function() {
         const audio = document.querySelector('#current-song');
+        const play = document.querySelector('#play>img');
         if (audio.paused){
             audio.play();
+            play.src = './assets/images/pause.png';
         } else {
             audio.pause();
+            play.src = './assets/images/play.png';
         }
     },
 

@@ -138,7 +138,7 @@ button {
 }
 
 #play img{
-    width: calc(25px + 2vw);
+    height: calc(25px + 2vw);
 }
 
 #r10 img, #f10 img {
