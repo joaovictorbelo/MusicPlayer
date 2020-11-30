@@ -4,6 +4,7 @@ function reset_song(song) {
     const title = document.querySelector('#title');
     const author = document.querySelector('#author');
     const audio = document.getElementById('current-song');
+    const play = document.querySelector('#play>img');
 
     title.innerHTML = song.name;
     author.innerHTML = song.author;
@@ -11,6 +12,7 @@ function reset_song(song) {
 
     audio.onloadedmetadata = function() {
         this.play();
+        play.src = './assets/images/pause.png';
         duration.value = audio.duration;
         duration.innerHTML = secToMin(audio.duration);
     }

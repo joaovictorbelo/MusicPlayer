@@ -46,4 +46,4 @@ audio.addEventListener('timeupdate', function() {
     if(autoskip == 0){
         next.click();
     }
-})
+});

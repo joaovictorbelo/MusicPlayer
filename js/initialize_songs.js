@@ -4,6 +4,7 @@ import songs from "./songs.js";
 function initialize_songs(current_index) {
 
     const covers = document.querySelector('.covers');
+    const total = songs.lenght;
 
     covers.textContent = '';
     
@@ -14,6 +15,7 @@ function initialize_songs(current_index) {
         song.classList = 'before cover';
         song.id = `${i}`;
         song.style.backgroundImage = `url('${songs[i].cover}')`;
+        song.style.zIndex = i;
         covers.appendChild(song);
     }
 
@@ -22,6 +24,7 @@ function initialize_songs(current_index) {
         song.classList = 'current cover';
         song.id = `${i}`;
         song.style.backgroundImage = `url('${songs[i].cover}')`;
+        song.style.zIndex = total+1;
         covers.appendChild(song);
 
         reset_song(songs[i]);
@@ -32,6 +35,7 @@ function initialize_songs(current_index) {
         song.classList = 'after cover';
         song.id = `${i}`;
         song.style.backgroundImage = `url('${songs[i].cover}')`;
+        song.style.zIndex = total - i;
         covers.appendChild(song);
     }
 }
