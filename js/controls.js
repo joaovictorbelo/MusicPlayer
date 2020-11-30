@@ -6,7 +6,6 @@ const handler = {
             const current_song = document.getElementById(`${current_index}`);
             const next_song = document.getElementById(`${current_index + 1}`);
             current_song.classList = 'before cover';
-            console.log(current_song.id);
             current_song.style.zIndex = current_song.id;
             next_song.classList = 'current cover';
             next_song.style.zIndex = songs.length;
